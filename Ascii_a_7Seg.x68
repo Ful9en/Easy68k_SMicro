@@ -24,8 +24,8 @@ START	            * First instruction of program
 	CLR.B SEG7
 	CLR.B SEG8
 
-  MOVE.L #14,D0   * Mensaje por pantalla
-  MOVE.L #PIDE,A1
+	MOVE.L #14,D0   * Mensaje por pantalla
+	MOVE.L #PIDE,A1
 	TRAP #15
     
 	MOVE.L #5,D0    * Toma un valor del teclado en ASCII que se guarda en D1
@@ -39,24 +39,23 @@ START	            * First instruction of program
 	
 
 FIN	
-  SIMHALT		* halt simulator
+	SIMHALT		* halt simulator
 
-  ORG $2000   * Origen de Datos
+	ORG $2000   * Origen de Datos
 
-TABLA
-    DC.B %00111111 DIGITO 0
-    DC.B %00000110 DIGITO 1
-    DC.B %01011011 DIGITO 2
-    DC.B %01001111 DIGITO 3
-    DC.B %01100110 DIGITO 4
-    DC.B %01101101 DIGITO 5
-    DC.B %01111101 DIGITO 6
-    DC.B %00000111 DIGITO 7
-    DC.B %01111111 DIGITO 8
-    DC.B %01101111 DIGITO 9
-    DC.B %00000000 DIGITO OFF
-    DC.B %10000000 PUNTO
+TABLA	DC.B %00111111 DIGITO 0
+	DC.B %00000110 DIGITO 1
+	DC.B %01011011 DIGITO 2
+	DC.B %01001111 DIGITO 3
+	DC.B %01100110 DIGITO 4
+	DC.B %01101101 DIGITO 5
+	DC.B %01111101 DIGITO 6
+	DC.B %00000111 DIGITO 7
+	DC.B %01111111 DIGITO 8
+	DC.B %01101111 DIGITO 9
+	DC.B %00000000 DIGITO OFF
+	DC.B %10000000 PUNTO
 	
-PIDE DC.B 'Pulsa un Dígito >',0
+PIDE	DC.B 'Pulsa un Dígito >',0
 
-    END 	START		* last line of source
+	END 	START		* last line of source
